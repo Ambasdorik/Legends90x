@@ -7,6 +7,7 @@ import random
 from datetime import datetime
 
 # Не забудьте захистити свій токен (наприклад, через змінні середовища або файл конфігурації)
+import os
 TOKEN = os.getenv("DISCORD_TOKEN")
 LOG_CHANNEL_ID = 1299805349808836618  # Лог-канал (для інших повідомлень)
 MODERATOR_ROLE = "Модератор"
