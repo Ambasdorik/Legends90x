@@ -2,3 +2,6 @@ discord.py
 flask
 wavelink
 python-dotenv
+json
+random
+datetime
