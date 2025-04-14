@@ -62,7 +62,6 @@ async def on_ready():
 async def on_member_join(member):
     guild = member.guild
     welcome_channel = guild.get_channel(WELCOME_CHANNEL_ID)
-
     # Надсилаємо привітання в канал привітання (тільки ID і тег)
     embed = discord.Embed(
         title="👋 Новий учасник!",
@@ -70,7 +69,6 @@ async def on_member_join(member):
         color=random.randint(0, 0xFFFFFF))
     if welcome_channel:
         await welcome_channel.send(embed=embed)
-
     # Надсилаємо особисте повідомлення новому учаснику (повний текст)
     await dm(
         member, f"Вітаємо {member.mention} в нашому клані! "
