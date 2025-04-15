@@ -347,4 +347,13 @@ async def listpunishments(interaction: discord.Interaction):
         await interaction.followup.send("✅ Усі чисті.", ephemeral=True)
 
 
+def run_web():
+    port = int(os.environ.get("PORT", 8080))
+    server = HTTPServer(("0.0.0.0", port), SimpleHTTPRequestHandler)
+    server.serve_forever()
+
+# Запускаємо веб-сервер у фоновому потоці для Railway
+threading.Thread(target=run_web).start()
+
+# Запускаємо Discord-бота
 bot.run(TOKEN)
